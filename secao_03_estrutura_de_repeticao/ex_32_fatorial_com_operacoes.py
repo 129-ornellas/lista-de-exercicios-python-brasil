@@ -26,3 +26,18 @@ Ex.: 5!=5.4.3.2.1=120
 
 def calcular_fatorial(n: int):
     """Escreva aqui em baixo a sua solução"""
+    # if n > 16 or n < 1 or type(n) == float:
+    #     print(f"'Apenas valores positivos, inteiros e menores que 16 são válidos. Não é possível calcular para {n}'")
+    #     return
+    
+    resultado = 1
+    print(f'Fatorial de {n}:')
+    print(f"{n}! = ", end="")
+    for count in range(1,n+1):
+        resultado *= count
+        while count < n:
+            print(n - count +1, end=" . ")
+            break
+        else:
+            print(n - count +1, end=" = ")
+    print(f"{resultado}")

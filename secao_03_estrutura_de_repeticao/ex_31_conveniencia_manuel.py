@@ -56,3 +56,46 @@ para registrar a próxima compra.
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
+    # uso de definição de função para evitar 
+    def calculo(total):
+        dinheiro = float(input('digite o pagamento: '))
+        troco = dinheiro - total
+        print('Lojas Tabajara')
+        print(f'Total'.ljust(9), f': R${total:>7.2f}')
+        print(f'Dinheiro'.ljust(9), f': R${dinheiro:>7.2f}')
+        print(f'Troco'.ljust(9), f': R${troco:>7.2f}')
+        print('-------------------')
+    
+    total = 0
+    while True:
+        valores = float(input('digite as entradas: '))
+        if valores == 0:
+            calculo(total)
+            total = 0
+        elif valores == -1:
+            if total == 0:
+                print('Lojas Tabajara')
+                print('-------------------')
+                print('Programa encerrado!')
+                break
+            else:
+                calculo(total)
+                print('Programa encerrado!')
+                break
+        
+        total += valores
+
+
+            
+            
+        # elif valores == 0:
+            # break
+
+        # Compra de apenas um produto
+        
+        # for i in range(valores):
+            # entrada apenas com -1
+            
+            # usar o maior valor pra dizer que é o dinheiro
+            # usar o -1 pra dizer que o programa encerra
+            

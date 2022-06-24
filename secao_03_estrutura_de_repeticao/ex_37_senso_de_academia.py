@@ -54,5 +54,48 @@ da média das alturas e dos pesos dos clientes
 """
 
 
+from statistics import mean
+
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    def printar(nomes_clientes, cliente_alto, cliente_baixo, cliente_magro, cliente_gordo):
+        print(f'Cliente mais alto: {nomes_clientes[0]}, com {cliente_alto} centímetros')
+        print(f'Cliente mais baixo: {nomes_clientes[1]}, com {cliente_baixo} centímetros')
+        print(f'Cliente mais magro: {nomes_clientes[2]}, com {cliente_magro} kilos')
+        print(f'Cliente mais gordo: {nomes_clientes[3]}, com {cliente_gordo} kilos')
+
+    def medias(media_altura, media_peso):
+        print('--------------------------------------------------')
+        print(f'Media de altura dos clientes: {media_altura:.1f} centímetros')
+        print(f'Media de peso dos clientes: {media_peso:.1f} kilos')
+
+    lista_de_nomes = []
+    lista_de_alturas = []
+    lista_de_pesos = []
+    
+    nome = str(input('digite nome: '))
+    while nome != '0':
+        lista_de_nomes.append(nome)
+        altura = int(input('digite altura: '))
+        lista_de_alturas.append(altura)
+        peso = int(input('digite peso: '))
+        lista_de_pesos.append(peso)
+        nome = str(input('digite nome: '))
+
+    # variaveis de maior e menor
+    maior_altura = max(lista_de_alturas)
+    menor_altura = min(lista_de_alturas)
+    magro = min(lista_de_pesos)
+    gordo = max(lista_de_pesos)
+    
+    diferenciados = []
+    diferenciados.append(lista_de_nomes[lista_de_alturas.index(max(lista_de_alturas))])
+    diferenciados.append(lista_de_nomes[lista_de_alturas.index(menor_altura)])
+    diferenciados.append(lista_de_nomes[lista_de_pesos.index(magro)])
+    diferenciados.append(lista_de_nomes[lista_de_pesos.index(gordo)])
+
+    media_de_alturas = mean(lista_de_alturas)
+    media_de_pesos = mean(lista_de_pesos)
+
+    printar(diferenciados, maior_altura, menor_altura, magro, gordo)
+    medias(media_de_alturas, media_de_pesos)
