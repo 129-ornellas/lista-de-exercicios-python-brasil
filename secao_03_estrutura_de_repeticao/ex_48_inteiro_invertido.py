@@ -19,5 +19,16 @@ Exemplo:
 """
 
 
+from operator import invert
+
+
 def inverter_inteiro(numero):
     """Escreva aqui em baixo a sua solução"""
+    # lista = []
+
+    # for i in range(-1):
+    #   lista.append(numero)
+    #   print(lista)
+
+    numero = str(numero)[:: -1]
+    print(numero)
